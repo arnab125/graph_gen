@@ -1,0 +1,78 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.labels {
+    margin-bottom: 20px;
+}
+
+.label {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.label span {
+    font-weight: bold;
+}
+
+.data {
+    margin-bottom: 20px;
+}
+
+.code {
+    font-size: 16px;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    border: 1px solid black;
+}
+
+.graph-img {
+    display: block;
+    max-width: 100%;
+    margin-top: 20px;
+    border: 1px solid black;
+}
+
+.download {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.download-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.download-link:hover {
+    background-color: #0056b3;
+}

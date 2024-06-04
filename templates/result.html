@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/static/result-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">{{ title }}</h1>
+        <div class="labels">
+            <p class="label">X Label: <span>{{ x_label }}</span></p>
+            <p class="label">Distance between X values: <span>{{ x_distance }}</span></p>
+            <p class="label">Y Label: <span>{{ y_label }}</span></p>
+            <p class="label">Distance between Y values: <span>{{ y_distance }}</span></p>
+
+        </div>
+        <div class="data">
+            <p class="label">X Array:</p>
+            <pre class="code">{{ x_array }}</pre>
+            <p class="label">Y Array:</p>
+            <pre class="code">{{ y_array }}</pre>
+        </div>
+        <div class="graph">
+            <img src="{{ graph_url }}" alt="Graph" class="graph-img">
+        </div>
+        <div class="download">
+            <a href="{{ graph_url }}" download="graph.png" class="download-link">Download Graph</a>
+        </div>
+    </div>
+    <!-- Additional processing and visualization can be done here -->
+</body>
+</html>

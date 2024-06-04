@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Data</title>
+    <link rel="stylesheet" href="/static/form-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="form-title">Submit Your Data</h1>
+        <form action="/submit" method="post" class="submit-form">
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="x_label">X Label:</label>
+                <input type="text" id="x_label" name="x_label" required>
+            </div>
+            <div class="form-group">
+                <label for="y_label">Y Label:</label>
+                <input type="text" id="y_label" name="y_label" required>
+            </div>
+            <div class="form-group">
+                <label for="x_array">X Array (comma-separated):</label>
+                <input type="text" id="x_array" name="x_array" required>
+            </div>
+            <div class="form-group">
+                <label for="y_array">Y Array (comma-separated):</label>
+                <input type="text" id="y_array" name="y_array" required>
+            </div>
+            <div class="form-group">
+                <label for="x_distance">Distance between X values:</label>
+                <input type="text" id="x_distance" name="x_distance" required>
+            </div>
+            <div class="form-group">
+                <label for="y_distance">Distance between Y values:</label>
+                <input type="text" id="y_distance" name="y_distance" required>
+            </div>
+            {% if error %}
+        <div class="error-message">
+            <p>{{ error }}</p>
+        </div>
+        {% endif %}
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
