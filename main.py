@@ -1,3 +1,4 @@
+from datetime import datetime
 from math import ceil
 import os
 from typing import List
@@ -90,18 +91,15 @@ async def handle_form(request: Request,
         # Create the directory if it doesn't exist
         os.makedirs(images_directory, exist_ok=True)
 
+        unique_id = f"plot{datetime.now().strftime('%Y%m%d%H%M%S')}.png"
+
         # Save the plot with high resolution
         plt.savefig(os.path.join(images_directory, 'plot.png'), dpi=1200, bbox_inches='tight')
         # generate the plot link
-        context["graph_url"] = "/static/images/plot.png"
+        context["graph_url"] = f"/static/images/{unique_id}"
 
 
         return templates.TemplateResponse("result.html", context)
     except Exception as e:
         context["error"] = str(e)
         return templates.TemplateResponse("form.html", context)
-
-@app.get("/download")
-async def download_file():
-    file_path = "static/images/plot.png"
-    return FileResponse(file_path, media_type="application/octet-stream", filename="plot.png")
