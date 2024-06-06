@@ -46,7 +46,7 @@ async def handle_form(request: Request,
         "x_distance": x_distance,
         "y_distance": y_distance
     }
-    print(context)
+    #print(context)
 
     try:
             # Sample data
@@ -91,10 +91,10 @@ async def handle_form(request: Request,
         # Create the directory if it doesn't exist
         os.makedirs(images_directory, exist_ok=True)
 
-        unique_id = f"plot{datetime.now().strftime('%Y%m%d%H%M%S')}.png"
+        unique_id = f"plot-{datetime.now().strftime('%Y%m%d%H%M%S')}.png"
 
         # Save the plot with high resolution
-        plt.savefig(os.path.join(images_directory, 'plot.png'), dpi=1200, bbox_inches='tight')
+        plt.savefig(os.path.join(images_directory, unique_id), dpi=1200, bbox_inches='tight')
         # generate the plot link
         context["graph_url"] = f"/static/images/{unique_id}"
 
